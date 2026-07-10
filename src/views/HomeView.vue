@@ -830,10 +830,15 @@ onUnmounted(() => {
   position: relative;
   z-index: 2;
   overflow: hidden;
-  background: rgba(255,255,255,0.03);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255, 255, 255, 0.04) !important; /* Принудительный rgba-формат для предотвращения сжатия цвета минификатором */
+
+  /* Исправленный порядок префиксов и форсирование GPU-слоя */
+  -webkit-backdrop-filter: blur(16px) !important;
+  backdrop-filter: blur(16px) !important;
+  transform: translateZ(0);
+  will-change: backdrop-filter;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-left: 2px solid #18A61F;
   border-radius: 0 16px 16px 0;
   box-shadow: 0 30px 60px rgba(0,0,0,0.3);
@@ -847,7 +852,6 @@ onUnmounted(() => {
   box-sizing: border-box;
   animation: panelReveal 1s 0.3s cubic-bezier(0.22, 0.61, 0.36, 1) both;
 }
-
 .botanic-scope-wrapper .botanic-hero-aurora-glow {
   position: absolute;
   top: -20%;
@@ -909,10 +913,15 @@ onUnmounted(() => {
 .botanic-scope-wrapper .botanic-info-card {
   position: relative;
   overflow: hidden;
-  background: rgba(255,255,255,0.03);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255, 255, 255, 0.04) !important; /* Принудительный rgba-формат */
+
+  /* Исправленный порядок префиксов и форсирование GPU-слоя */
+  -webkit-backdrop-filter: blur(16px) !important;
+  backdrop-filter: blur(16px) !important;
+  transform: translateZ(0);
+  will-change: backdrop-filter;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-left: 2px solid #18A61F;
   border-radius: 0 16px 16px 0;
   box-shadow: 0 30px 60px rgba(0,0,0,0.3);
