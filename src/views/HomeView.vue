@@ -639,9 +639,6 @@ onUnmounted(() => {
   margin: 0;
   padding: 0;
   flex-wrap: nowrap;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
 }
 
 .botanic-scope-wrapper .botanic-nav-link {
